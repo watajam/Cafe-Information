@@ -4,16 +4,15 @@ import Image from "next/image";
 export const UserCord = ({ children }) => {
   return (
     <div>
-      <p class="w-82 h-8  pl-2 bg-gray-350 text-white leading-8 font-bold">
+      <h2 class="w-82 h-8  pl-2 bg-gray-350 text-white leading-8 font-bold">
         イベント情報
-      </p>
+      </h2>
       <br />
       <Cord>
-        <Image
+        <img
           src="/chuttersnap-aEnH4hJ_Mrs-unsplash.jpg"
-          width={335}
-          height={136}
           alt={"aa"}
+          class="object-cover w-full  h-34 rounded-t-lg"
         />
         <dl class="">
           <dt>カテゴリ</dt>
