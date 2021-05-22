@@ -4,8 +4,8 @@ import Image from "next/image";
 export const UserCord = ({ children }) => {
   return (
     <div>
-      <h2 class="w-82 h-8  pl-2 bg-gray-350 text-white leading-8 font-bold">
-        イベント情報
+      <h2 class="w-full h-8  pl-2 bg-gray-350 text-white leading-8 font-bold">
+        観光情報
       </h2>
       <br />
       <Cord>
