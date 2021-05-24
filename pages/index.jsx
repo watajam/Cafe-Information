@@ -31,11 +31,6 @@ export default function Home() {
 
           <UserCord />
 
-          <UserCord />
-          <UserCord />
-          <UserCord />
-          <UserCord />
-          <UserCord />
           </div>
         </div>
       </div>
