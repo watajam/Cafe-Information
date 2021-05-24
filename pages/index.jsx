@@ -16,9 +16,9 @@ export default function Home() {
       <div class="p-5 ">
         <div class="flex">
           <SearchInput />
-        <PrimaryButton>
-          <LocationMarkerIcon class="w-14 h-5  text-white  " />
-        </PrimaryButton>
+          <PrimaryButton>
+            <LocationMarkerIcon class="w-14 h-5  text-white  " />
+          </PrimaryButton>
         </div>
         <br />
         <div>
