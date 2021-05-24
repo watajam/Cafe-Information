@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const UserCord = ({ children }) => {
   return (
-    <div class="mb-8">
+    <div class="mb-12">
       <Cord>
         <img
           src="/chuttersnap-aEnH4hJ_Mrs-unsplash.jpg"
