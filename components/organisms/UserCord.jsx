@@ -1,9 +1,8 @@
 import { Cord } from "../atoms/cord/Cord";
-import Image from "next/image";
 
 export const UserCord = ({ children }) => {
   return (
-    <div class="mb-12">
+    <div class="mb-8">
       <Cord>
         <img
           src="/chuttersnap-aEnH4hJ_Mrs-unsplash.jpg"
