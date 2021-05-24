@@ -4,7 +4,7 @@ export const Input = ({ placeholder }) => {
       <input
         type="search"
         placeholder={placeholder}
-        class="rounded-l-lg appearance-none rounded-none w-full h-10 focus:outline-none 	border-solid border-2 border-oreng-500 text-xs "
+        class=" w-full h-10 focus:outline-none 	border-solid border-2 border-oreng-500 text-xs rounded-l-lg appearance-none rounded-none"
       ></input>
     </div>
   );
