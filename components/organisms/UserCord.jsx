@@ -2,7 +2,7 @@ import { Cord } from "../atoms/cord/Cord";
 
 export const UserCord = ({ children }) => {
   return (
-    <div class="mb-8">
+    <div >
       <Cord>
         <img
           src="/chuttersnap-aEnH4hJ_Mrs-unsplash.jpg"
