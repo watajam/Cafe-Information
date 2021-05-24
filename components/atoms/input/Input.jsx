@@ -1,7 +1,7 @@
 export const Input = ({ placeholder }) => {
   return (
-    <div class="w-full  ">
-      {/* rounded-r-none rounded-l-lg */}
+    <div class="w-full  appearance-none rounded-none">
+      {/*  rounded-l-lg */}
       <input
         type="search"
         placeholder={placeholder}
