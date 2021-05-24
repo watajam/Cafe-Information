@@ -2,7 +2,7 @@ import { Cord } from "../atoms/cord/Cord";
 
 export const UserCord = ({ children }) => {
   return (
-    <div >
+    <div class="mb-6">
       <Cord>
         <img
           src="/chuttersnap-aEnH4hJ_Mrs-unsplash.jpg"
@@ -17,7 +17,6 @@ export const UserCord = ({ children }) => {
           <dt>参加費無料</dt>
         </dl>
       </Cord>
-      <br />
     </div>
   );
 };
