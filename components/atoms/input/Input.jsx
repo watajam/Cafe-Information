@@ -1,11 +1,10 @@
 export const Input = ({ placeholder }) => {
   return (
-    <div class="w-full  ">
-      {/*  rounded-l-lg */}
+    <div class="w-full">
       <input
         type="search"
         placeholder={placeholder}
-        class="rounded-l-lg appearance-none  w-full h-10 focus:outline-none 	border-solid border-2 border-oreng-500 text-xs "
+        class="rounded-l-lg  rounded-none w-full h-10 focus:outline-none 	border-solid border-2 border-oreng-500 text-xs "
       ></input>
     </div>
   );
