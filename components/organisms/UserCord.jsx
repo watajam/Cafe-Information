@@ -17,6 +17,7 @@ export const UserCord = ({ children }) => {
           <dt>参加費無料</dt>
         </dl>
       </Cord>
+      <br />
     </div>
   );
 };

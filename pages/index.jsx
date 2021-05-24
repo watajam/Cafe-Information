@@ -27,19 +27,15 @@ export default function Home() {
             観光情報
           </h2>
           <br />
-          <div class="mb-8">
           <UserCord />
-          </div>
-          <div class="mb-8">
           <UserCord />
-          </div>
-          <div class="mb-8">
           <UserCord />
-          </div>
-          <div class="mb-8">
           <UserCord />
-          </div>
-
+          <UserCord />
+          <UserCord />
+          <UserCord />
+          <UserCord />
+          <UserCord />
         </div>
       </div>
     </>
