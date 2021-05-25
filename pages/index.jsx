@@ -27,10 +27,17 @@ export default function Home() {
             観光情報
           </h2>
 
-          <div class="grid grid-cols-1 gap-6">
-
-          <UserCord />
-
+          <div class="grid grid-cols-1 sm:grid-cols-2  md:sm:grid-cols-3 lg:sm:grid-cols-4 xl:sm:grid-cols-5 gap-6">
+            <UserCord />
+            <UserCord />
+            <UserCord />
+            <UserCord />
+            <UserCord />
+            <UserCord />
+            <UserCord />
+            <UserCord />
+            <UserCord />
+            <UserCord />
           </div>
         </div>
       </div>
