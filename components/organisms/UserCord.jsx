@@ -1,6 +1,6 @@
 import { Cord } from "../atoms/cord/Cord";
 
-export const UserCord = ({ children }) => {
+export const UserCord = () => {
   return (
       <Cord>
         <img
