@@ -26,6 +26,9 @@ export default function Home() {
           <h2 class="w-full h-8 mb-6 pl-2 bg-gray-350 text-white leading-8 font-bold">
             観光情報
           </h2>
+          <h2 class="w-full h-8 mb-6 pl-2 bg-gray-350 text-white leading-8 font-bold">
+            観光情報
+          </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2  md:sm:grid-cols-3 lg:sm:grid-cols-4 xl:sm:grid-cols-5 gap-6">
             <UserCord />
