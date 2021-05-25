@@ -24,10 +24,10 @@ export default function Home() {
         <br />
         <div>
           <h2 class="w-full h-8 mb-6 pl-2 bg-gray-350 text-white leading-8 font-bold">
-            観光情報
+            カフェ情報
           </h2>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <UserCord />
             <UserCord />
             <UserCord />
