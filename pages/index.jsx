@@ -14,20 +14,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div class="p-5">
-        <div class="flex">
+      <div className="p-5">
+        <div className="flex">
           <SearchInput />
           <PrimaryButton>
-            <LocationMarkerIcon class="w-14 h-5  text-white  " />
+            <LocationMarkerIcon className="w-14 h-5  text-white  " />
           </PrimaryButton>
         </div>
         <br />
         <div>
-          <h2 class="w-full h-8 mb-6 pl-2 bg-gray-350 text-white leading-8 font-bold">
+          <h2 className="w-full h-8 mb-6 pl-2 bg-gray-350 text-white leading-8 font-bold">
             カフェ情報
           </h2>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <UserCord />
             <UserCord />
             <UserCord />

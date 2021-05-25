@@ -6,9 +6,9 @@ export const UserCord = () => {
         <img
           src="/chuttersnap-aEnH4hJ_Mrs-unsplash.jpg"
           alt={"aa"}
-          class="object-cover w-full  h-34 rounded-t-lg"
+          className="object-cover w-full  h-34 rounded-t-lg"
         />
-        <dl class="">
+        <dl>
           <dt>カテゴリ</dt>
           <dt>環境を大切に</dt>
           <dt>会場名</dt>
