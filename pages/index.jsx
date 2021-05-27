@@ -3,7 +3,7 @@ import { LocationMarkerIcon } from "@heroicons/react/solid";
 
 import { PrimaryButton } from "../components/atoms/button/PrimaryButton";
 import { SearchInput } from "../components/molecules/button/SearchInput";
-import { UserCord } from "../components/organisms/UserCord";
+import { InformationCord } from "../components/organisms/InformationCord";
 
 export default function Home() {
   return (
@@ -27,17 +27,17 @@ export default function Home() {
             カフェ情報
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            <UserCord />
-            <UserCord />
-            <UserCord />
-            <UserCord />
-            <UserCord />
-            <UserCord />
-            <UserCord />
-            <UserCord />
-            <UserCord />
-            <UserCord />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
+            <InformationCord />
           </div>
         </div>
       </div>
