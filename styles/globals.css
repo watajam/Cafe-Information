@@ -3,14 +3,19 @@
 @tailwind utilities;
 .bg-orange-500 { background-color: #FF871F; }
 .bg-gray-350 { background-color: #9f9f9f; }
+.text-orange-500{ color: #FF871F; }
 .text-gray-150{ color: #9f9f9f; }
 .h-34 {height: 8.5rem;}
-
-
-.w-38 {width: 9.5rem;}
-.w-54 {width:12.4375rem ;}
-.w-51 {width:12.1875rem ;}
-
 .border-oreng-500 {border-color: #FF871F;}
+
+
+@layer base {
+  dt{
+   @apply text-gray-150 float-left
+  }
+  dd {
+    @apply text-gray-150 pl-7 pb-2  text-base;
+  }
+}
 
 
