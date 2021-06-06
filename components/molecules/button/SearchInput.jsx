@@ -1,15 +1,35 @@
+import { useCallback, useState } from "react";
 import { SearchIcon } from "@heroicons/react/solid";
 
 import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 import { Input } from "../../atoms/input/Input";
 
-export const SearchInput = () => {
+export const SearchInput = ({ onSearchSubmit }) => {
+  const [text, setText] = useState("");
+
+  const submitFrom = (e) => {
+    e.preventDefault();
+    if (text === "") {
+      alert("キーワードを入力してください");
+      return;
+    }
+    onSearchSubmit(encodeURIComponent(text));
+  };
+
+  const onChange = useCallback((e) => {
+    setText(e.target.value.trim());
+  }, []);
+
   return (
-    <div className="flex w-full mr-6">
-      <Input placeholder={"店名・エリア・キーワード"} />
+    <form className="flex w-full" onSubmit={submitFrom}>
       <SecondaryButton>
         <SearchIcon className="w-14 h-5 text-white text-base" />
       </SecondaryButton>
-    </div>
+      <Input
+        placeholder="店名・エリア・キーワード"
+        onChange={onChange}
+        value={text}
+      />
+    </form>
   );
 };

@@ -4,34 +4,36 @@ import { ClockIcon } from "@heroicons/react/solid";
 
 import { Cord } from "../atoms/cord/Cord";
 
-export const InformationCord = () => {
+export const InformationCord = ({user}) => {
   return (
     <Cord>
       <img
-        src="/gema-saputera-7Gm1Jwt1uYA-unsplash.jpg"
-        alt={"aa"}
+        src={user.photo.mobile.s}
+        alt="img"
         className="object-cover w-full  h-34 rounded-t-lg"
       />
+
       <div className="p-2">
-        <h1 className="text-2xl font-bold  text-orange-500  pb-2">STARBUCKS</h1>
+        <h1 className="text-lg font-bold  text-orange-500  pb-2">
+          {user.name}
+        </h1>
 
         <dl>
           <dt>
-            <HomeIcon className="w-5 h-6 text-gray-150 " />
+            <HomeIcon className="w-5 h-5 text-gray-150 " />
           </dt>
-          <dd>静岡県沼津市???番地</dd>
+
+          <dd>{user.address}</dd>
+
           <dt>
-            <LocationMarkerIcon className="w-5 h-6 text-gray-150 " />
+            <LocationMarkerIcon className="w-5 h-5 text-gray-150 " />
           </dt>
-          <dd>沼津駅から徒歩?分</dd>
+          <dd>{user.mobile_access}</dd>
           <dt>
-            <ClockIcon className="w-5 h-6 text-gray-150" />
+            <ClockIcon className="w-5 h-5 text-gray-150" />
           </dt>
           <dd className="pb-0">OPEN</dd>
-          <dd>
-            月～日、祝日、祝前日: 17:00～翌0:00 （料理L.O. 23:0 ドリンクL.O.
-            23:30
-          </dd>
+          <dd>{user.open}</dd>
         </dl>
       </div>
     </Cord>
