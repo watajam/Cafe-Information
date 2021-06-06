@@ -11,17 +11,18 @@ import { useCallback, useState } from "react";
 // const fetcher = (url) =>
 //   axios.get(url, { adapter: axiosJsonpAdapter }).then((res) => res.data);
 
-//     `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=1&format=json`,
-
-// `https://jsonplaceholder.typicode.com/users/${keyword}`,
-
 export default function Home(props) {
   const [keyword, setKeyword] = useState("");
 
   const { data, error } = useSWR(
     `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=1&format=json`,
-    { initialData: props }
+    { initialData: props.data }
   );
+
+  // const { data, error } = useSWR(
+  //   `https://jsonplaceholder.typicode.com/users/${keyword}`,
+  //   { initialData: props.data }
+  // );
 
   const onSearchSubmit = useCallback(
     (text) => {
@@ -59,10 +60,10 @@ export default function Home(props) {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {data.data.results.shop.map((user) => (
+            {data.map((user) => (
               <InformationCord key={user.id} user={user} />
             ))}
-            {/* <div > {data.name} </div> */}
+            {/* <div> {data.name} </div> */}
           </div>
         </div>
       </div>
@@ -75,15 +76,18 @@ export async function getStaticProps() {
   const utf8Keyword = encodeURIComponent(keywords);
   const res = await fetch(
     `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${utf8Keyword}&range=5&genre=G014&count=20&format=json`
-    // `https://jsonplaceholder.typicode.com/users/2`
+    // `https://jsonplaceholder.typicode.com/users/4`
   );
-  const data = await res.json();
-  // const data = datasLists.results.shop;
+  const datasLists = await res.json();
+  const data = datasLists.results.shop;
+
+  //jsonplace
+  // const data = await res.json();
 
   return {
     props: {
       data,
     },
-    revalidate: 1000,
+    revalidate: 1,
   };
 }
