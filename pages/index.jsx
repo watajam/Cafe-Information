@@ -1,23 +1,27 @@
 import Head from "next/head";
 import useSWR from "swr";
 import { LocationMarkerIcon } from "@heroicons/react/solid";
-import axiosJsonpAdapter from "axios-jsonp";
+import axios from "axios";
 
 import { PrimaryButton } from "../components/atoms/button/PrimaryButton";
 import { SearchInput } from "../components/molecules/button/SearchInput";
 import { InformationCord } from "../components/organisms/InformationCord";
 import { useCallback, useState } from "react";
 
-// const fetcher = (url) =>
-//   axios.get(url, { adapter: axiosJsonpAdapter }).then((res) => res.data);
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 export default function Home(props) {
   const [keyword, setKeyword] = useState("");
 
   const { data, error } = useSWR(
-    `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=1&format=json`,
+    `/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=4&format=json`,
+    fetcher,
     { initialData: props.data }
   );
+  // const { data, error } = useSWR(
+  //   `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=1&format=json`
+  //   { initialData: props.data }
+  // );
 
   // const { data, error } = useSWR(
   //   `https://jsonplaceholder.typicode.com/users/${keyword}`,
@@ -60,7 +64,7 @@ export default function Home(props) {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {data.map((user) => (
+            {data.results.shop.map((user) => (
               <InformationCord key={user.id} user={user} />
             ))}
             {/* <div> {data.name} </div> */}
@@ -78,11 +82,11 @@ export async function getStaticProps() {
     `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${utf8Keyword}&range=5&genre=G014&count=20&format=json`
     // `https://jsonplaceholder.typicode.com/users/4`
   );
-  const datasLists = await res.json();
-  const data = datasLists.results.shop;
+  // const datasLists = await res.json();
+  // const data = datasLists.results.shop;
 
   //jsonplace
-  // const data = await res.json();
+  const data = await res.json();
 
   return {
     props: {
