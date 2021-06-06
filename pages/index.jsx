@@ -10,23 +10,20 @@ import { useCallback, useState } from "react";
 
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 
-export default function Home(props) {
+export default function Home() {
   const [keyword, setKeyword] = useState("");
 
   const { data, error } = useSWR(
-    `/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=4&format=json`,
-    fetcher,
-    { initialData: props.data }
+    `/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=20&format=json`,
+    fetcher
   );
+
   // const { data, error } = useSWR(
-  //   `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=1&format=json`
+  //   `/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G014&count=20&format=json`,
+  //   fetcher,
   //   { initialData: props.data }
   // );
 
-  // const { data, error } = useSWR(
-  //   `https://jsonplaceholder.typicode.com/users/${keyword}`,
-  //   { initialData: props.data }
-  // );
 
   const onSearchSubmit = useCallback(
     (text) => {
@@ -67,7 +64,6 @@ export default function Home(props) {
             {data.results.shop.map((user) => (
               <InformationCord key={user.id} user={user} />
             ))}
-            {/* <div> {data.name} </div> */}
           </div>
         </div>
       </div>
@@ -75,23 +71,23 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps() {
-  const keywords = "静岡市";
-  const utf8Keyword = encodeURIComponent(keywords);
-  const res = await fetch(
-    `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${utf8Keyword}&range=5&genre=G014&count=20&format=json`
-    // `https://jsonplaceholder.typicode.com/users/4`
-  );
-  // const datasLists = await res.json();
-  // const data = datasLists.results.shop;
+// export async function getStaticProps() {
+//   const keywords = "静岡市";
+//   const utf8Keyword = encodeURIComponent(keywords);
+//   const res = await fetch(
+//     `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${utf8Keyword}&range=5&genre=G014&count=20&format=json`
+//     // `https://jsonplaceholder.typicode.com/users/4`
+//   );
+//   // const datasLists = await res.json();
+//   // const data = datasLists.results.shop;
 
-  //jsonplace
-  const data = await res.json();
+//   //jsonplace
+//   const data = await res.json();
 
-  return {
-    props: {
-      data,
-    },
-    revalidate: 1,
-  };
-}
+//   return {
+//     props: {
+//       data,
+//     },
+//     // revalidate: 1,
+//   };
+// }
