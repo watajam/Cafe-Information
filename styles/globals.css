@@ -14,7 +14,7 @@
    @apply text-gray-150 float-left
   }
   dd {
-    @apply text-gray-150 pl-7 pb-2  text-base;
+    @apply text-gray-150 pl-7 pb-2  text-sm;
   }
 }
 
