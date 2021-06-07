@@ -14,6 +14,7 @@ export const SearchInput = ({ onSearchSubmit }) => {
       return;
     }
     onSearchSubmit(encodeURIComponent(text));
+    console.log(encodeURIComponent(text));
   };
 
   const onChange = useCallback((e) => {

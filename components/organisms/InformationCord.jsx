@@ -8,7 +8,7 @@ export const InformationCord = ({user}) => {
   return (
     <Cord>
       <img
-        src={user.photo.mobile.s}
+        src={user.photo.pc.l}
         alt="img"
         className="object-cover w-full  h-34 rounded-t-lg"
       />
