@@ -2,19 +2,27 @@ import Head from "next/head";
 import useSWR from "swr";
 import axios from "axios";
 import { LocationMarkerIcon } from "@heroicons/react/solid";
+import axiosJsonpAdapter from "axios-jsonp";
 
 import { PrimaryButton } from "../components/atoms/button/PrimaryButton";
 import { SearchInput } from "../components/molecules/button/SearchInput";
 import { InformationCord } from "../components/organisms/InformationCord";
 import { useCallback, useState } from "react";
 
-const fetcher = (url) => axios.get(url).then((res) => res.data);
+
+const fetcher = (url) =>
+  axios
+    .get(url, {
+      adapter: axiosJsonpAdapter,
+    })
+    .then((res) => res.data);
+
 
 export default function Home(props) {
   const [keyword, setKeyword] = useState("");
 
   const { data, error } = useSWR(
-    `hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G012&count=20&format=json`,
+    `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G012&count=20&format=jsonp`,
     fetcher,
     { initialData: props.data }
   );
@@ -51,7 +59,7 @@ export default function Home(props) {
 
         <div>
           <h2 className="w-full h-8 mb-6 pl-2 bg-gray-350 text-white leading-8 font-bold">
-           ?????情報
+            ?????情報
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -68,9 +76,11 @@ export default function Home(props) {
 export async function getStaticProps() {
   const keywords = "静岡市";
   const utf8Keyword = encodeURIComponent(keywords);
-  const data = await fetcher(
+  const res = await fetch(
     `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${utf8Keyword}&range=5&genre=G012&count=20&format=json`
   );
+
+  const data = await res.json();
 
   return {
     props: {
