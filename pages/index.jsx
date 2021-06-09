@@ -14,7 +14,7 @@ export default function Home(props) {
   const [keyword, setKeyword] = useState("");
 
   const { data, error } = useSWR(
-    `/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G012&count=20&format=json`,
+    `hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G012&count=20&format=json`,
     fetcher,
     { initialData: props.data }
   );
