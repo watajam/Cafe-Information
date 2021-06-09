@@ -10,7 +10,7 @@ export const InformationCord = ({user}) => {
       <img
         src={user.photo.pc.l}
         alt="img"
-        className="object-cover w-full  h-34 rounded-t-lg"
+        className="object-cover w-full  h-34 rounded-t-md"
       />
 
       <div className="p-2">
