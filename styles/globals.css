@@ -7,6 +7,7 @@
 .text-gray-150{ color: #9f9f9f; }
 .h-34 {height: 8.5rem;}
 .border-oreng-500 {border-color: #FF871F;}
+.border-gray-350  {border-color: #9f9f9f;}
 
 
 @layer base {
