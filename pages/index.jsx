@@ -9,7 +9,6 @@ import { SearchInput } from "../components/molecules/button/SearchInput";
 import { InformationCord } from "../components/organisms/InformationCord";
 import { useCallback, useState } from "react";
 
-
 const fetcher = (url) =>
   axios
     .get(url, {
