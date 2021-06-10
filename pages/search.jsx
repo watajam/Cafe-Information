@@ -16,16 +16,12 @@ const fetcher = (url) =>
     })
     .then((res) => res.data);
 
-
-export default function Home(props) {
+export default function Search() {
   const [keyword, setKeyword] = useState("");
 
   const { data, error } = useSWR(
-    `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G012&count=10&format=jsonp`,
+    `/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${keyword}&range=5&genre=G012&count=20&format=jsop`,
     fetcher,
-    {
-      initialData: props.data,
-    }
   );
 
   const onSearchSubmit = useCallback(
@@ -74,19 +70,3 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps() {
-  const keywords = "静岡市";
-  const utf8Keyword = encodeURIComponent(keywords);
-  const res = await fetch(
-    `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${utf8Keyword}&range=5&genre=G012&count=20&format=json`
-  );
-
-  const data = await res.json();
-
-  return {
-    props: {
-      data,
-    },
-    revalidate: 5,
-  };
-}
