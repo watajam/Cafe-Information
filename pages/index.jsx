@@ -15,8 +15,6 @@ const fetcher = (url) =>
       adapter: axiosJsonpAdapter,
     })
     .then((res) => res.data);
-
-
 export default function Home(props) {
   const [keyword, setKeyword] = useState("");
 
