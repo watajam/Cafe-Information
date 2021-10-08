@@ -39,7 +39,7 @@ export default function Home(props) {
 
         <div>
           <h2 className="w-full h-8 mb-6 pl-2 bg-gray-350 text-white leading-8 font-bold">
-            カフェ・スイーツ情報
+            カフェ・スイーツ情報s
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
